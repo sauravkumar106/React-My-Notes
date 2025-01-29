@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+</head>
+<body>
+   <div id="root">Not Rendered</div>
+
+<!-- <script>
+
+ /* this is an example of DOM (Document Object Model) manipulation!
+
+    const heading = document.createElement("h1");
+
+    heading.innerHTML = "Namaste Everyone from JS";
+
+    const root = document.getElementById("root");
+
+    root.appendChild(heading); */
+</script> -->
+
+<!-- CDN link -->
+ <!-- that is the bear minimum setup for react -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<!-- Now creating an element in React -->
+<script>
+    // Below this line, we're using React to create an element
+    const heading = React.createElement("h1", {
+        id:"title",
+    }, "Namaste React");      
+                            //              👆 what is this(the second argument)??
+                            //    ANSWER     Props (props are values you pass to a React element or component to customize it, 
+                            //               like settings or options. They define things like appearance, behavior, or content.)
+                            //               React.createElement('div', { 
+                            //                                            className:'container', 
+                            //                                             id: 'main' 
+                            //                                          }
+                            //                                          , 'Hello World');
+
+    // the goal is to create a react element like this
+    /* 
+      <div id="container">
+         <h1>Heading 1</h1>
+         <h1>Heading 2</h1>
+      </div> 
+   */
+
+    const heading1 = React.createElement("h1",{
+                                                id:"title"
+                                              },
+                                       "Heading 1");
+
+    const heading2 = React.createElement("h2",{
+                                                id:"title"
+                                              },
+                                       "Heading 2");
+    const container = React.createElement("dev",{
+        id:"container",
+        //when we need to pass multiple child
+        //we use array
+    },[heading1,heading2])
+
+
+    
+
+
+
+
+    //what will the output of this code?
+    console.log(heading);//ANSWER: return an object
+    
+    // Now, we need ReactDOM to render the element to the DOM
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    //passing a react element inside the root
+ 
+//----- root.render(conatiner);-----
+ 
+ root.render(heading); // we need to call .render to display the element in the DOM
+</script>
+</body>
+</html>
+
+
+<!-- This was the core of React. It is complicated way of writing react.
+JSX came into pictue to makes us life easy -->
+ 
+                <!-- ----------The End---------- -->
